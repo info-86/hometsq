@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home TSQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b2a2e;
+    --paper: #f6f3ec;
+    --paper-warm: #efe9db;
+    --brass: #9c7a3c;
+    --brass-deep: #7c5f2c;
+    --line: rgba(27,42,46,0.14);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ece7db;
+      --paper: #14201f;
+      --paper-warm: #1a2725;
+      --brass: #c9a862;
+      --brass-deep: #e0bd7c;
+      --line: rgba(236,231,219,0.16);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #ece7db;
+    --paper: #14201f;
+    --paper-warm: #1a2725;
+    --brass: #c9a862;
+    --brass-deep: #e0bd7c;
+    --line: rgba(236,231,219,0.16);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+  header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mark {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .mark span { color: var(--brass-deep); }
+  .tagline {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: var(--ink);
+    opacity: 0.65;
+  }
+
+  .hero {
+    padding: 64px 0 40px;
+  }
+  .hero h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    line-height: 1.25;
+    max-width: 15ch;
+    margin: 0 0 28px;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    max-width: 52ch;
+    opacity: 0.85;
+    margin: 0 0 32px;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .btn:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  .btn-primary {
+    background: var(--brass-deep);
+    color: var(--paper);
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn-secondary:hover { border-color: var(--brass); }
+
+  section.block {
+    padding: 44px 0;
+    border-top: 1px solid var(--line);
+  }
+  .eyebrow-free h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 0 22px;
+  }
+
+  .steps {
+    display: grid;
+    gap: 22px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .step .num {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--brass);
+    padding-top: 2px;
+  }
+  .step h3 {
+    margin: 0 0 4px;
+    font-size: 1.02rem;
+    font-weight: 600;
+  }
+  .step p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.97rem;
+    max-width: 48ch;
+  }
+
+  .note {
+    font-size: 0.93rem;
+    opacity: 0.7;
+    max-width: 52ch;
+    border-left: 2px solid var(--brass);
+    padding-left: 16px;
+    margin-top: 30px;
+  }
+
+  .contact-grid {
+    display: grid;
+    gap: 10px;
+    font-size: 1rem;
+  }
+  .contact-grid a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .contact-grid a:hover { border-color: var(--brass); }
+
+  footer {
+    padding: 32px 0 56px;
+    font-size: 0.85rem;
+    opacity: 0.55;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 20px; }
+    header { padding: 36px 0 26px; }
+    .hero { padding: 44px 0 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mark">Home<span>TSQ</span></div>
+    <div class="tagline">A place to start, if you own a home in Southern California.</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>You may qualify for help you don't know about yet.</h1>
+    <p>
+      Homeowners are often eligible for assistance based on their income, their life stage,
+      or the condition of their home — most never find out. Home TSQ helps you check,
+      free, before anything is decided for you.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://bookings.cloud.microsoft/book/TSQCopy@atoddx.com/?ismsaljsauthenabled">Check what you may qualify for</a>
+      <a class="btn btn-secondary" href="mailto:anthony@atoddx.com">Email us</a>
+    </div>
+  </div>
+</section>
+
+<section class="block eyebrow-free">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h3>Tell us about your home</h3>
+          <p>A short conversation about ownership, household, and what's going on with the property. No cost, no obligation.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h3>We check what's possible</h3>
+          <p>We look at what you may be eligible for before anyone tries to sell you anything.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h3>You decide what's next</h3>
+          <p>If there's a fit, we connect you with a verified option. If there isn't, we tell you that too.</p>
+        </div>
+      </div>
+    </div>
+    <p class="note">
+      Home TSQ is not a government agency and is not affiliated with any city, county, or utility.
+      We help homeowners find out what may be available to them.
+    </p>
+  </div>
+</section>
+
+<section class="block eyebrow-free">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <div class="contact-grid">
+      <div>Anthony Claverie, Home TSQ</div>
+      <div><a href="mailto:anthony@atoddx.com">anthony@atoddx.com</a></div>
+      <div><a href="tel:+13105613966">(310) 561-3966</a></div>
+      <div>333 6th Street #208, San Pedro, CA 90731</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Home TSQ — a project of Atoddx.</div>
+</footer>
+
+</body>
+</html>
